@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ChApiResponse } from '../../../interfaces/CharacterApi/ChApiResponse';
 
 @Component({
-    selector: 'my-app',
+    selector: 'chs-show',
     template: `
     <div *ngIf="data">
       <div *ngFor="let item of objectKeys(data!.info)">
