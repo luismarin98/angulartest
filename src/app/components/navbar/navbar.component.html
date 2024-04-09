@@ -3,9 +3,11 @@
         <div
             class="flex flex-col justify-between items-center py-2 w-full gap-3 transition transform ease-in-out duration-100">
             <div class="w-full flex flex-row justify-between items-center px-2 gap-3">
-                <a href="/" class="flex flex-row gap-1 justify-center items-center text-white dark:text-black hover:text-black text-lg dark:shadow-neutral-500 shadow-neutral-500 hover:shadow-md hover:shadow-neutral-700 rounded-md px-3 py-1 hover:bg-neutral-100 transition-all ease-in-out duration-100 hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-angular">
+                <a href="/"
+                    class="flex flex-row gap-1 justify-center items-center text-white dark:text-black hover:text-black text-lg dark:shadow-neutral-500 shadow-neutral-500 hover:shadow-md hover:shadow-neutral-700 rounded-md px-3 py-1 hover:bg-neutral-100 transition-all ease-in-out duration-100 hover:scale-105"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-angular">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path
                             d="M5.428 17.245l6.076 3.471a1 1 0 0 0 .992 0l6.076 -3.471a1 1 0 0 0 .495 -.734l1.323 -9.704a1 1 0 0 0 -.658 -1.078l-7.4 -2.612a1 1 0 0 0 -.665 0l-7.399 2.613a1 1 0 0 0 -.658 1.078l1.323 9.704a1 1 0 0 0 .495 .734z" />
@@ -14,11 +16,11 @@
                     </svg> <span>Angular app</span></a>
                 <div class="hidden md:block md:flex md:flex-row md:gap-2 md:items-center md:justify-center">
                     <a class="px-2 py-1 bg-neutral-100 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 text-center transition-all ease-in-out duration-100 hover:scale-105"
-                        href="/">Home</a>
+                        href="/character">Personajes</a>
                     <a class="px-2 py-1 bg-neutral-100 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 text-center transition-all ease-in-out duration-100 hover:scale-105"
-                        href="/nosotros">Nosotros</a>
+                        href="/episode">Episodio</a>
                     <a class="px-2 py-1 bg-neutral-100 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 text-center transition-all ease-in-out duration-100 hover:scale-105"
-                        href="/contacto">Contactanos</a>
+                        href="/location">Mundo</a>
                 </div>
                 <button (click)="toggleClase()"
                     class="md:hidden px-2 py-1 bg-neutral-100 mx-1 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 transition-all ease-in-out duration-100 hover:scale-105">
@@ -32,13 +34,13 @@
                     </svg>
                 </button>
             </div>
-            <div [className]="isActive ? 'hidden' : 'md:hidden flex flex-col gap-2 justify-center w-full text-center'">
+            <div [className]="isActive === false ? 'hidden' : 'md:hidden flex flex-col gap-2 justify-center w-full text-center'">
                 <a class="px-2 py-1 bg-neutral-100 mx-1 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 transition-all ease-in-out duration-100 hover:scale-105"
-                    href="/">Home</a>
+                    href="/character">Personajes</a>
                 <a class="px-2 py-1 bg-neutral-100 mx-1 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 transition-all ease-in-out duration-100 hover:scale-105"
-                    href="/nosotros">Nosotros</a>
+                    href="/episode">Episodio</a>
                 <a class="px-2 py-1 bg-neutral-100 mx-1 rounded-md shadow-md shadow-neutral-500 hover:shadow-neutral-700 transition-all ease-in-out duration-100 hover:scale-105"
-                    href="/contacto">Contactanos</a>
+                    href="/location">Mundo</a>
             </div>
         </div>
     </div>
