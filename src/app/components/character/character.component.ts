@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RickapiconService } from '../../services/rickapicon.service';
 import { ChApiResponse } from '../../interfaces/CharacterApi/ChApiResponse';
-import { CharactersComponent } from './template/characters.component';
+import { CharacterResponse } from '../../interfaces/CharacterApi/CharacterResponse';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CharactersComponent],
-  templateUrl: './character.component.html'
+  templateUrl: './character.component.html',
 })
 
 export class CharacterComponent {
@@ -21,13 +20,11 @@ export class CharacterComponent {
     results: []
   }
 
-  results = Object.values(this.data!.results)
+  results: CharacterResponse[] = this.data!.results;
 
   constructor(private apiSer: RickapiconService) { }
 
-  objectKeys(obj: ChApiResponse) {
-    return Object.keys(obj);
-  }
+  objectKeys(obj: ChApiResponse) { return Object.keys(obj) }
 
   apiConsum() {
     this.apiSer.GetCharacters().subscribe((res) => {

@@ -1,8 +1,16 @@
 <div class="w-full h-full flex flex-col justify-between items-center gap-2">
     <div class="w-full bg-neutral-100 bg-opacity-50 rounded-md">
-        <div class=" flex flex-col md:flex-row gap-2 p-2 items-center">
+        <div class="flex flex-col md:flex-row gap-2 p-2 items-center justify-center w-full">
             <p class="text-white">Consulta de personajes</p>
             <button (click)="apiConsum()" class="dark:bg-neutral-100 rounded-md px-6 py-1">Tramelos a todos!</button>
         </div>
+    </div>
+    <div class="w-full bg-neutral-100 bg-opacity-50 rounded-md text-white">
+        <p class="text-xl"><span class="font-semibold">Paginas:</span> {{data!.info.pages}} - <span
+                class="font-semibold">Total:</span> {{data!.info.count}}</p>
+        <p class="text-xl"><span class="font-semibold">Url:</span> {{data!.info.next}}</p>
+        @for (item of results; track item) {
+            <div class="bg-neutral-100">{{item.name}}</div>
+        }
     </div>
 </div>
