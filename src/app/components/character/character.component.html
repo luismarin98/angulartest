@@ -1,16 +1,34 @@
-<div class="w-full h-full flex flex-col justify-between items-center gap-2">
+<div class="w-full h-full flex flex-col justify-between gap-2">
     <div class="w-full bg-neutral-100 bg-opacity-50 rounded-md">
         <div class="flex flex-col md:flex-row gap-2 p-2 items-center justify-center w-full">
             <p class="text-white">Consulta de personajes</p>
-            <button (click)="apiConsum()" class="dark:bg-neutral-100 rounded-md px-6 py-1">Tramelos a todos!</button>
+            <button (click)="apiConsum()" class="dark:bg-neutral-100 rounded-md px-6 py-1">Todos los
+                personajes!</button>
         </div>
     </div>
-    <div class="w-full bg-neutral-100 bg-opacity-50 rounded-md text-white">
-        <p class="text-xl"><span class="font-semibold">Paginas:</span> {{data!.info.pages}} - <span
-                class="font-semibold">Total:</span> {{data!.info.count}}</p>
-        <p class="text-xl"><span class="font-semibold">Url:</span> {{data!.info.next}}</p>
-        @for (item of results; track item) {
-            <div class="bg-neutral-100">{{item.name}}</div>
-        }
+    <div
+        [className]=" data === null ? 'hidden': 'w-full h-full bg-neutral-100 bg-opacity-50 rounded-md flex flex-col justify-between items-center'">
+        <div class="w-full text-center p-1">
+            <p class="text-xl text-white"><span class="font-semibold">Paginas:</span> {{data!.info.pages}} - <span
+                    class="font-semibold">Total:</span> {{data!.info.count}}</p>
+            <p class="text-xl text-white"><span class="font-semibold">Url:</span> {{data!.info.next}}</p>
+        </div>
+        <div class="flex flex-row flex-wrap justify-center gap-2 max-h-full overflow-y-auto">
+            @for (item of data!.results; track item) {
+            <div class="bg-neutral-100 w-1/5 flex flex-col gap-2 rounded-md p-1">
+                <p><span class="font-semibold">Id:</span> {{item.id}}</p>
+                <p><span class="font-semibold">Nombre:</span> {{item.name}}</p>
+                <p><span class="font-semibold">Creado:</span> {{item.created}}</p>
+                <p><span class="font-semibold">Total episodios:</span> {{item.episode.length}}</p>
+                <p><span class="font-semibold">Genero:</span> {{item.gender}}</p>
+                <p><span class="font-semibold">Localidad:</span> {{item.location.name}}</p>
+                <p><span class="font-semibold">Origen:</span> {{item.origin}}</p>
+                <p><span class="font-semibold">Especies:</span> {{item.species}}</p>
+                <p><span class="font-semibold">Estado:</span> {{item.status}}</p>
+                <p><span class="font-semibold">Tipo:</span> {{item.type}}</p>
+                <p><span class="font-semibold">Url:</span> {{item.url}}</p>
+            </div>
+            }
+        </div>
     </div>
 </div>

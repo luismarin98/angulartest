@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RickapiconService } from '../../services/rickapicon.service';
 import { ChApiResponse } from '../../interfaces/CharacterApi/ChApiResponse';
-import { CharacterResponse } from '../../interfaces/CharacterApi/CharacterResponse';
 
 @Component({
   selector: 'app-character',
@@ -10,17 +9,7 @@ import { CharacterResponse } from '../../interfaces/CharacterApi/CharacterRespon
 })
 
 export class CharacterComponent {
-  data: ChApiResponse | null = {
-    info: {
-      count: 0,
-      next: '',
-      pages: 0,
-      prev: 0
-    },
-    results: []
-  }
-
-  results: CharacterResponse[] = this.data!.results;
+  data: ChApiResponse | null = null;
 
   constructor(private apiSer: RickapiconService) { }
 
